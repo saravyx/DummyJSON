@@ -1,0 +1,22 @@
+<div class="container">
+  <form class="cartao" [formGroup]="formulario" (ngSubmit)="entrar()">
+    <h1>DummyJSON Login</h1>
+    <p class="dica">
+      Usuário de teste: <strong>emilys</strong> · Senha: <strong>emilyspass</strong>
+    </p>
+    <label>
+      Usuário
+      <input type="text" formControlName="username" placeholder="username" />
+    </label>
+    <label>
+      Senha
+      <input type="password" formControlName="password" placeholder="password" />
+    </label>
+    @if (erro()) {
+      <p class="erro">{{ erro() }}</p>
+    }
+    <button type="submit" [disabled]="carregando()">
+      {{ carregando() ? 'Entrando...' : 'Entrar' }}
+    </button>
+  </form>
+</div>

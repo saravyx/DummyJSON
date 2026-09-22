@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="cartao">
+    <header class="topo">
+      <h1>Área protegida</h1>
+      <button type="button" class="btn-sair" (click)="sair()">Sair</button>
+    </header>
+    @if (usuario(); as sessao) {
+      <section class="sessao">
+        <img [src]="sessao.image" [alt]="sessao.username" />
+        <div>
+          <p><strong>Sessão local (salva no login):</strong></p>
+          <p>{{ sessao.firstName }} {{ sessao.lastName }} ({{ sessao.username }})</p>
+          <p>{{ sessao.email }}</p>
+        </div>
+      </section>
+    }
+    <hr />
+    <h2>Chamada autenticada a /auth/me</h2>
+    <p class="explicacao">
+      Esta seção não usa os dados salvos no login — ela faz uma nova requisição HTTP, autenticada
+      automaticamente pelo interceptor com o token guardado na sessão.
+    </p>
+    @if (carregando()) {
+      <p>Confirmando sessão com a API...</p>
+    }
+    @if (erro()) {
+      <section class="mensagem-erro">
+        <p>{{ erro() }}</p>
+        <button type="button" (click)="carregarPerfilCompleto()">Tentar novamente</button>
+      </section>
+    }
+    @if (perfilCompleto(); as perfil) {
+      <ul class="detalhes">
+        <li><strong>Perfil (role):</strong> {{ perfil.role }}</li>
+        <li>
+          <strong>Nome completo:</strong>
+          {{ perfil.firstName }} {{ perfil.lastName }}
+        </li>
+        <li><strong>E-mail:</strong> {{ perfil.email }}</li>
+      </ul>
+    }
+  </div>
+</div>

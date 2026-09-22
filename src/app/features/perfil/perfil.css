@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+:host {
+  display: block;
+  background: #f5f7fb;
+  min-height: 100vh;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.cartao {
+  width: 100%;
+  max-width: 520px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+h1 {
+  font-size: 20px;
+  color: #222;
+}
+h2 {
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 8px;
+}
+.btn-sair {
+  border: none;
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+.btn-sair:hover {
+  background: #fecaca;
+}
+.sessao {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.sessao img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+.sessao p {
+  color: #444;
+  font-size: 14px;
+  margin: 2px 0;
+}
+hr {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 20px 0;
+}
+.explicacao {
+  color: #666;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.detalhes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.detalhes li {
+  color: #444;
+  font-size: 14px;
+}
+.mensagem-erro {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+.mensagem-erro p {
+  color: #dc2626;
+  font-weight: bold;
+  font-size: 14px;
+}
+.mensagem-erro button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
